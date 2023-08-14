@@ -1,70 +1,47 @@
 <template>
-  <div class="flex items-center justify-center min-h-screen bg-gray-100">
-    <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
-      <h2 class="text-2xl font-semibold mb-4">Login</h2>
-      <form @submit.prevent="login">
-        <div class="mb-4">
-          <label for="email" class="block mb-2 text-sm font-medium"
-            >Email</label
-          >
-          <input
-            v-model="email"
-            type="email"
-            id="email"
-            class="
-              w-full
-              px-4
-              py-2
-              border
-              rounded-md
-              focus:outline-none focus:ring focus:border-blue-300
-            "
-            placeholder="Enter your email"
-            required
-          />
-        </div>
-        <div class="mb-4">
-          <label for="password" class="block mb-2 text-sm font-medium"
-            >Password</label
-          >
-          <input
-            v-model="password"
-            type="password"
-            id="password"
-            class="
-              w-full
-              px-4
-              py-2
-              border
-              rounded-md
-              focus:outline-none focus:ring focus:border-blue-300
-            "
-            placeholder="Enter your password"
-            required
-          />
-        </div>
-        <div class="mb-4">
-          <button
-            type="submit"
-            class="
-              w-full
-              px-4
-              py-2
-              text-white
-              bg-blue-500
-              rounded-md
-              hover:bg-blue-600
-              focus:outline-none focus:ring
-            "
-          >
-            Login
-          </button>
-        </div>
-      </form>
-    </div>
+  <div class="container">
+    <form @submit.prevent="login">
+      <h2 class="mb-3">Login</h2>
+      <div class="input">
+        <label for="email">Email</label>
+        <input
+          class="form-control"
+          type="text"
+          name="email"
+          placeholder="email@adress.com"
+        />
+      </div>
+      <div class="input">
+        <label for="password">Password</label>
+        <input
+          class="form-control"
+          type="password"
+          name="password"
+          placeholder="password123"
+        />
+      </div>
+      <div class="alternative-option mt-4">
+        You don't have an account? <span @click="moveToRegister">Register</span>
+      </div>
+      <button type="submit" class="mt-4 btn-pers" id="login_button">
+        Login
+      </button>
+      <div
+        class="alert alert-warning alert-dismissible fade show mt-5 d-none"
+        role="alert"
+        id="alert_1"
+      >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+    </form>
   </div>
 </template>
-
 <script>
 export default {
   data() {
