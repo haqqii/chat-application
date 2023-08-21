@@ -92,6 +92,8 @@ export default {
   padding: 5px;
   border: 1px solid #e1e1e1;
   display: flex;
+  width: 100%; /* Set the input width to 100% */
+  max-width: 300px; /* Set a maximum width for the input */
   border-radius: 4px;
   margin-top: 5px; /* Add a margin to separate label and input */
   margin-bottom: 10px; /* Add a margin at the bottom of the input */
@@ -103,11 +105,20 @@ export default {
   margin-bottom: 10px;
 }
 
+.form-button {
+  /* ... other styles ... */
+  padding: 12px;
+  margin: center; /* Center the button horizontally */
+  display: block; /* Make the button a block element to take full width */
+}
+
 .form-label {
   font-weight: bold;
   font-size: 14px;
   margin-bottom: 5px;
 }
+
+/* Rest of the style code remains the same */
 
 /* Media query for smaller screens */
 @media screen and (max-width: 600px) {
@@ -120,8 +131,9 @@ export default {
   }
 
   .form-input {
-    padding: 8px; /* Reduce padding for smaller screens */
+    padding: 8px;
     font-size: 14px;
+    max-width: none; /* Allow the input to take full width on smaller screens */
   }
 
   .form-button {
