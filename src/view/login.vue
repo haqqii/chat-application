@@ -1,11 +1,10 @@
 <template>
   <div class="login-container">
     <div class="logo-container">
-      <img src="path-to-your-logo.png" alt="Logo" class="logo" />
+      <img src="../assets/logo.png" alt="Logo" class="logo" />
     </div>
     <div class="form-container">
       <div class="form-box">
-        <h2 class="form-title">Login</h2>
         <form @submit.prevent="submitForm" class="form">
           <div class="form-group">
             <label for="email" class="form-label">Email</label>
@@ -58,9 +57,12 @@ export default {
 <style scoped>
 .login-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in the total width */
 }
 
 .logo-container {
@@ -69,34 +71,36 @@ export default {
 }
 
 .logo {
-  align-items: center;
+  margin: auto;
   max-width: 100px;
 }
 
 .form-container {
-  width: 300px;
+  max-width: 350px; /* Set a maximum width for the form container */
+  width: 100%; /* Take up the full width available */
 }
 
 .form-box {
   background-color: #fff;
   border: 1px solid #e1e1e1;
   padding: 20px;
+  display: flex;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-
-.form-title {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.form {
+.form-input {
+  padding: 5px;
+  border: 1px solid #e1e1e1;
   display: flex;
-  flex-direction: column;
+  border-radius: 4px;
+  margin-top: 5px; /* Add a margin to separate label and input */
+  margin-bottom: 10px; /* Add a margin at the bottom of the input */
 }
 
 .form-group {
-  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .form-label {
@@ -105,24 +109,24 @@ export default {
   margin-bottom: 5px;
 }
 
-.form-input {
-  padding: 10px;
-  border: 1px solid #e1e1e1;
-  border-radius: 4px;
-  display: flex;
-}
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+  .form-group {
+    margin-bottom: 15px;
+  }
 
-.form-button {
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
+  .form-label {
+    font-size: 12px;
+  }
 
-.form-button:hover {
-  background-color: #0056b3;
+  .form-input {
+    padding: 8px; /* Reduce padding for smaller screens */
+    font-size: 14px;
+  }
+
+  .form-button {
+    padding: 10px;
+    font-size: 14px;
+  }
 }
 </style>
